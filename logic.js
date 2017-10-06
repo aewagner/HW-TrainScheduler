@@ -4,16 +4,16 @@ console.log("hello");
 
 
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBaMUQg_XQbjV8V2P4exGjLxWFIYuQ3huU",
-    authDomain: "hw-trainscheduler.firebaseapp.com",
-    databaseURL: "https://hw-trainscheduler.firebaseio.com",
-    projectId: "hw-trainscheduler",
-    storageBucket: "",
-    messagingSenderId: "611195711905"
-  };
+  // var config = {
+  //   apiKey: "AIzaSyBaMUQg_XQbjV8V2P4exGjLxWFIYuQ3huU",
+  //   authDomain: "hw-trainscheduler.firebaseapp.com",
+  //   databaseURL: "https://hw-trainscheduler.firebaseio.com",
+  //   projectId: "hw-trainscheduler",
+  //   storageBucket: "",
+  //   messagingSenderId: "611195711905"
+  // };
 
-  firebase.initializeApp(config);
+  // firebase.initializeApp(config);
 
   var database = firebase.database();
 
@@ -22,10 +22,10 @@ console.log("hello");
   event.preventDefault();
 
   // Grabs user input
-  var trainName = $("#train-name-input").val();
-  var trainDest = $("#destination-input").val();
-  var trainStart = moment($("#start-input").val(), "HH:mm").format("X");
-  var trainFreq = $("#frequency-input").val();
+  var trainName = $("#train-name-input").val().trim();
+  var trainDest = $("#destination-input").val().trim();
+  var trainStart = moment($("#start-input").val().trim(), "HH:mm").format("X");
+  var trainFreq = $("#frequency-input").val().trim();
 
   // Creates local "temporary" object for holding employee data
   var newTrain = {
